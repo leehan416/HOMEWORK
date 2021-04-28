@@ -13,7 +13,8 @@ void loop() { //계속 반복되는 함수
         if (data == '\n') { // 만약 데이터가 \n 이라면 (줄 바꿈이라면)
             return; // 함수 종료 
         } else { // 아니라면
-            if (data == '@') { // 만약 데이터가 @이라면 val=true;//val 을 true 로 지정
+            if (data == '@') { // 만약 데이터가 @이라면 
+                val=true;//val 을 true 로 지정
                 return; // 함수 종료
             } else if (data == '#') { // 만약 데이터가 #이라면 
                 val = false; // val 을 false 로 지정
