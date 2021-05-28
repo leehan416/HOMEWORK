@@ -1,29 +1,29 @@
 #include <Servo.h> // Servo 모터를 활용하기 위한 라이브러리 설정
-//----------------------------------------
+
 Servo ServoR; // 우측 Servo 모터 선언 
 Servo ServoL; // 좌측 Servo 모터 선언
-//----------------------------------------
+
 int goalAngle = 180; // 목표 각도 변수 (default = 180)
 int nowAngle = 30; // 현재 각도 변수 (default = 30)
 int perMove = 5; // 각 이동당 이동할 각도 
-//----------------------------------------
+
 int angleList[] = {30, 50, 70, 90}; // 각도 리스트 
-//----------------------------------------
+
 bool timeVer = false; // 주기 버전인가?
 int timeSum = 0; // 시간 체크를 위한 변수 (각 프레임당 1씩 더하여 시간 연산)
 int timeVal = 100; // 변경 주기 시간 변수 
-//----------------------------------------
+
 int type = 0; //모터 활동 변수 | 0 = 정지 1 = 상승 2 = 하강 
 //----------------------------------------
 void setup() { 
 	for (int a = 2; a < 7; a++) // 핀모드 세팅 2 ~ 6
 		pinMode(a, INPUT); 
-//----------------------------------------
-    //Servo모터 핀번호 설정
+
+    	//Servo모터 핀번호 설정
 	ServoR.attach(8); 
 	ServoL.attach(9);    
-//----------------------------------------
-    // Servo초기 각도 설정
+	
+	// Servo초기 각도 설정
 	ServoR.write (nowAngle); 
 	ServoL.write (nowAngle);
 }
@@ -68,7 +68,7 @@ void loop() {
 				nowAngle -= perMove; // 모터 작동
 		}
 //----------------------------------------
-        //각 이동
+        	//각 이동
 		ServoL.write (nowAngle);
 		ServoR.write (nowAngle);
 		delay(100); 
