@@ -86,9 +86,9 @@ int RandomSet() { // 랜덤 활용 함수
     return 0;
 }
 int TypeSet() { // 어느 방향으로 작동해야하는지 설정하는 함수
-    if (nowAngle < goalAngle) // 상승해야한다면
+	if (nowAngle < goalAngle) // 상승해야한다면
 		return  1;
-    else // 하강해야 한다면
+	else // 하강해야 한다면
 		return  2;
 	return 0;
 }
