@@ -65,7 +65,7 @@ int findRoom(int persons[5]) {
     int value;
 
     while (1) { // 도르마무
-        value = rand() % 5 + 0;
+        value = rand() % 5 + 1;
         if (persons[value] < 2) {
             persons[value]++;
             break;
