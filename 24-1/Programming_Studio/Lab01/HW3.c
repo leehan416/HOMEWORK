@@ -60,23 +60,29 @@ int main() {
 
 //--------------------------------------------------------------------------------------
 
+//방 배정 함수
 int findRoom(int persons[5]) {
 // 이 곳에 생각 정리와 코드 구현
+    
     int value;
 
-    while (1) { // 도르마무
-        value = rand() % 5 + 1;
-        if (persons[value] < 2) {
+    // 방 랜덤 배정
+    while (1) {
+        value = rand() % 5 + 1; //1 ~ 4
+        if (persons[value] < 2) { // 방에 배정 가능하면 배정.
             persons[value]++;
-            break;
+            break; 
         }
     }
     return value;
 
 }
 
+//출력 함수
 void printReport(char mn[10][20], int mr[10], int mc, char wn[10][20], int wr[10], int wc) {
-// 이 곳에 생각 정리와 코드 구현
+    // 이 곳에 생각 정리와 코드 구현
+
+    // 명단 출력
 
     printf("남학생 명단 (%d명)\n", mc);
 
@@ -89,6 +95,8 @@ void printReport(char mn[10][20], int mr[10], int mc, char wn[10][20], int wr[10
     for (int i = 0; i < wc; i++) {
         printf("%d. %s [%d]\n", (i + 1), wn[i], (wr[i]));
     }
+    //--------------------------------------------------------------------------------------
+    //호실 출력
 
     printf("호실별 배정 명단\n");
     for (int i = 0; i < 2; i++) {
@@ -98,11 +106,8 @@ void printReport(char mn[10][20], int mr[10], int mc, char wn[10][20], int wr[10
 
             for (int m = 0; m < 10; m++) { // search
                 if (mr[m] == (i + 1) * 100 + (j + 1) || wr[m] == (i + 1) * 100 + (j + 1)) {
-                    if (st1 == -1) {
-                        st1 = m;
-                    } else {
-                        st2 = m;
-                    }
+                    if (st1 == -1) st1 = m;
+                    else st2 = m;
                 }
             }
             if (i == 0)
