@@ -4,7 +4,7 @@
 #include<vector>
 
 using namespace
-std;
+        std;
 
 //-------------------------------
 #include<cassert> // to use assert func
@@ -27,13 +27,16 @@ std;
 //TODOLIST max 가 vec0 로 지정된 이후 변경 안됨
 int &getmax(vector<int> &vec) {
     assert(vec.size() > 0);
-    auto &max = vec[0];
+    int index;
+    int max = 0;
+
     for (size_t i = 0; i < vec.size(); i++) {
-        if (max < vec[i]) { // max search in list 
-            max = vec[i]; // change
+        if (max < vec[i]) { // max search in list
+            index = i; // change
+            max = vec[i];
         }
     }
-    return max;
+    return vec[index];
 }
 //-------------------------------
 
@@ -42,9 +45,8 @@ int &getmax(vector<int> &vec) {
 // your code here – define setmax() here
 
 //-------------------------------
-void setmax(
-    vector<int> &vec) {
-    int& idx = getmax(vec);
+void setmax(vector<int> &vec) {
+    int &idx = getmax(vec);
     idx = 99; // set value to 99
 }
 //-------------------------------
@@ -55,24 +57,24 @@ int main(int argc, char *argv[]) {
     vector<int> list2 = {33, 13, 45, 19, 39, 22};
 
     cout << ">list1: ";
-    for (auto x: list1) 
+    for (auto x: list1)
         cout << x << " ";
     cout << endl;
 
     setmax(list1);
     cout << "<list1: ";
-    for (auto x: list1) 
+    for (auto x: list1)
         cout << x << " ";
     cout << endl << endl;
 
     cout << ">list2: ";
-    for (auto x: list2) 
+    for (auto x: list2)
         cout << x << " ";
     cout << endl;
-    
+
     setmax(list2);
     cout << "<list2: ";
-    for (auto x: list2) 
+    for (auto x: list2)
         cout << x << " ";
     cout << endl;
 
