@@ -1,3 +1,7 @@
+// Step_6
+// On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: 이한결(HanGyeol_Lee) Student Number: 22100594
+
+
 #include<iostream>
 #include <cctype> // to use toupper
 

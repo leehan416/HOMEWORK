@@ -1,10 +1,10 @@
 //Step_5
+// On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: 이한결(HanGyeol_Lee) Student Number: 22100594
 
 #include<iostream>
 #include<vector>
 
-using namespace
-        std;
+using namespace std;
 
 //-------------------------------
 #include<cassert> // to use assert func
@@ -24,7 +24,6 @@ using namespace
 // your code here – define getmax() here
 
 //-------------------------------
-//TODOLIST max 가 vec0 로 지정된 이후 변경 안됨
 int &getmax(vector<int> &vec) {
     assert(vec.size() > 0);
     int index;
@@ -46,8 +45,9 @@ int &getmax(vector<int> &vec) {
 
 //-------------------------------
 void setmax(vector<int> &vec) {
-    int &idx = getmax(vec);
-    idx = 99; // set value to 99
+    // int &idx = getmax(vec);
+    // idx = 99; // set value to 99
+    getmax(vec) = 99; // 수업에서 배운내용!
 }
 //-------------------------------
 

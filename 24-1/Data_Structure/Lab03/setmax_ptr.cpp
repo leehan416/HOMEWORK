@@ -1,4 +1,6 @@
 //Step_3
+// On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: 이한결(HanGyeol_Lee) Student Number: 22100594
+
 
 #include<iostream>
 #include<vector>
@@ -15,7 +17,6 @@ int getmax(vector<int> vec) {
 	auto max = vec[0];
 	size_t idx = 0;
 	for (size_t i = 0; i < vec.size(); i++) {
-		// cout << "your code here\n";
 		//-------------------------------
 			if (max < vec[i]) { // max search in list 
 				max = vec[i]; // change
@@ -27,9 +28,8 @@ int getmax(vector<int> vec) {
 }
 
 // sets the max value in the list to 99
-// your code here – define setmax() here
 
-
+// 함수 선언
 void setmax(vector<int> *vec) {
 	assert(vec->size() > 0);
 
@@ -49,7 +49,6 @@ int main(int argc, char *argv[]) {
 
 
 	// 결과 적용
-	// cout << "your code here – invoke setmax()" << endl;
 	setmax(&list1);
 
 
@@ -64,7 +63,7 @@ int main(int argc, char *argv[]) {
 	for (auto x: list2) cout << x << " ";
 	cout << endl;
 
-	// cout << "your code here –- invoke setmax()" << endl;
+	//함수 호출
 	setmax(&list2);
 
 	cout << "<list2: ";

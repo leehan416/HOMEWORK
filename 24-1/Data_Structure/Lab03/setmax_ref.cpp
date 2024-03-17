@@ -1,4 +1,5 @@
 //Step_4
+// On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: 이한결(HanGyeol_Lee) Student Number: 22100594
 
 #include<iostream>
 #include<vector>
@@ -15,7 +16,6 @@ int getmax(vector<int> vec) {
     auto max = vec[0];
     size_t idx = 0;
     for (size_t i = 0; i < vec.size(); i++) {
-        // cout << "your code here\n";
         //-------------------------------
 		if (max < vec[i]) { // max search in list 
 			max = vec[i]; // change
@@ -31,7 +31,6 @@ int getmax(vector<int> vec) {
 // your code here – define setmax() here
 void setmax(vector<int> &vec) {
 	size_t idx = getmax(vec);
-	// cout << "your code here\n";
 	//-------------------------------
 	vec[idx] = 99; // set value to 99
 	//-------------------------------
