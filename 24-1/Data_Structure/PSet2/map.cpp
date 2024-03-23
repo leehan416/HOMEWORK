@@ -1,3 +1,5 @@
+//On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment.
+//서명: 이한결 분반: ECE20010-03 학번: 22100594
 #include <iostream>
 #include <map>
 
