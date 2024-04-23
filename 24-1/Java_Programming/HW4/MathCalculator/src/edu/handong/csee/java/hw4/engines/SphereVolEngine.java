@@ -1,26 +1,60 @@
-// done
-
 
 package edu.handong.csee.java.hw4.engines;
 
+import edu.handong.csee.java.hw4.util.InputChecker;
+
+/**
+ * Engine that compute Sphere Volume
+ */
 public class SphereVolEngine implements Computable {
-    private static final String engineName ="SPHEREVOL";
+	private static final String engineName ="SPHEREVOL";
 
-    private double radius;
-    private double result;
-    
-    @Override
-    public void setInput(String[] args) { radius = Double.parseDouble(args[1]); }
-    
-    public void setResult(double result) { this.result = result; }
+	private double radius;
+	private double result;
+	/**
+	 * Setter of Input
+	 * @param args[String[]] Input datas 
+	 */
+	@Override
+	public void setInput(String[] args) { 
+		if (args.length == 1)InputChecker.printErrorMessageForTheNumberOfMinimumRequiredInputsAndExit(engineName, 1);
+		else if (args.length == 2){
+			double temp = Double.parseDouble(args[1]); 
+			if (temp <= 0) InputChecker.printErrorMesssageForNegativeInputsAndExit(engineName);
+			else radius = temp;
+		} else InputChecker.printErrorMesssageForTheNumberOfRequiredInputsAndExit(engineName, 1);
+		
 
-    @Override
-    public void compute() { result = 4/3 * Math.pow(radius, 3)* Math.PI; }
+	}
+	/**
+	 * Setter of result
+	 * @param result[double] Reuslt of compute 
+	 */
+	public void setResult(double result) { this.result = result; }
 
-    public String getEnginName(){ return engineName; }
+	/**
+	 * compute result 
+	 */
+	@Override
+	public void compute() { result = 4.0/3 * Math.pow(radius, 3)* Math.PI; }
 
-    public double getRadius(){ return radius; }
+	/**
+	 * Getter of Engine name
+	 * @return engineName[String] Name of Engine 
+	 */
+	public String getEnginName(){ return engineName; }
 
-    @Override
-    public double getResult() { return result; }
+
+	/**
+	 * Getter of Radius
+	 * @return radius[double] Data of radius
+	 */
+	public double getRadius(){ return radius; }
+
+	/**
+	 * Getter of Result
+	 * @return result[double] result of compute 
+	 */
+	@Override
+	public double getResult() { return result; }
 }
